@@ -1,0 +1,37 @@
+<html>
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: solid 1px black;
+        }
+    </style>
+</head>
+<body>
+<h1>all orders!</h1>
+<table>
+    <tbody>
+    <tr>
+        <th>Наименование продукта</th>
+        <th>Количество</th>
+        <th>Исполнитель</th>
+        <th>Статус</th>
+        <th></th>
+    </tr>
+    {% for order in all_orders %}
+        <tr>
+            <td>{{ order.item.name }}</td>
+            <td>{{ order.quantity }}</td>
+            <td>{{ order.executor }}</td>
+            <td>{% if order.done %}Выполнено{% else %}Не выполнено{% endif %}</td>
+            <td><a href="update-order/{{ order.pk }}">обновить заказ</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<a href="create">create order</a>
+</body>
+</html>
