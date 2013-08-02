@@ -12,10 +12,10 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'myaccount_mybase',                      # Or path to database file if using sqlite3.
+        'NAME': 'logart_mysql',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': 'myaccount',
-        'PASSWORD': 'mypassword',
+        'USER': 'logart_db_user',
+        'PASSWORD': 'RXADadtzKx',
         'HOST': 'mysql1.alwaysdata.com',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
     }
