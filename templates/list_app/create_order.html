@@ -6,24 +6,24 @@
     {{ form.non_field_errors }}
     <div class="fieldWrapper">
         {{ form.item.errors }}
-        <label for="id_subject">Email subject:</label>
+        <label for="id_subject">Товар:</label>
         {{ form.item }}
-        <a href="create-item">create new item</a>
+        <a href="create-item">Создать новый товар</a>
     </div>
     <div class="fieldWrapper">
         {{ form.quantity.errors }}
-        <label for="id_message">Your message:</label>
+        <label for="id_message">Количество:</label>
         {{ form.quantity }}
     </div>
     <div class="fieldWrapper">
         {{ form.executor.errors }}
-        <label for="id_sender">Your email address:</label>
+        <label for="id_sender">Исполнитель:</label>
         {{ form.executor }}
     </div>
     <div class="fieldWrapper">
         {{ form.done.errors }}
-        <label for="id_cc_myself">CC yourself?</label>
+        <label for="id_cc_myself">Выполнено</label>
         {{ form.done }}
     </div>
-    <p><input type="submit" value="Send message"/></p>
+    <p><input type="submit" value="Подтвердить заказ"/></p>
 </form>
