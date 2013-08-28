@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Create your views here.
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render, get_object_or_404
@@ -16,7 +17,7 @@ def create_order(req):
         form = CreateOrderForm(req.POST)
         if form.is_valid():
             form.save()
-            message = "Item successfully added!"
+            message = "Товар добавлен успешно!"
     else:
         form = CreateOrderForm()
     return render(req, 'list_app/create_order.html', {'form': form, 'message': message})
