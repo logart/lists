@@ -24,6 +24,7 @@ def create_order(req):
 
 
 def create_item(req):
+    redirect_url = "/"
     if req.POST:
         form = CreateItemForm(req.POST)
         if form.is_valid():
@@ -31,8 +32,9 @@ def create_item(req):
             redirect_address = req.POST.get('from', '/')
             return HttpResponseRedirect(redirect_address)
     else:
+        redirect_url = req.GET.get('from', '/')
         form = CreateItemForm()
-    return render(req, 'list_app/create_item.html', {'form': form})
+    return render(req, 'list_app/create_item.html', {'form': form, 'from': redirect_url})
 
 
 def update_order(request, pk):

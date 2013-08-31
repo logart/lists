@@ -8,7 +8,7 @@
         {{ form.item.errors }}
         <label for="id_subject">Товар:</label>
         {{ form.item }}
-        <a href="create-item">Создать новый товар</a>
+        <a href="create-item?from=create">Создать новый товар</a>
     </div>
     <div class="fieldWrapper">
         {{ form.quantity.errors }}
@@ -25,5 +25,6 @@
         <label for="id_cc_myself">Выполнено</label>
         {{ form.done }}
     </div>
-    <p><input type="submit" value="Подтвердить заказ"/></p>
+    <input type="submit" value="Подтвердить заказ"/>
+    <a href="home">К списку заказов!</a>
 </form>
