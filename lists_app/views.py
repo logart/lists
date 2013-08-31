@@ -17,7 +17,7 @@ def create_order(req):
         form = CreateOrderForm(req.POST)
         if form.is_valid():
             form.save()
-            message = u"Товар добавлен успешно!"
+            message = u"Заказ добавлен успешно!"
     else:
         form = CreateOrderForm()
     return render(req, 'list_app/create_order.html', {'form': form, 'message': message})
