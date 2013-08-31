@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Create your views here.
-from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from lists_app.forms import CreateOrderForm, CreateItemForm, UpdateOrderForm
-from lists_app.models import Order, Item
+from lists_app.models import Order
 
 
 def home(req):
@@ -45,4 +45,9 @@ def update_order(request, pk):
     else:
         form = UpdateOrderForm(instance=order)
 
-    return render(request, 'list_app/show_order.html', {'form': form, 'order': order})
+    executor_verbose_name = Order._meta.get_field("executor").verbose_name.title()
+    item_verbose_name = order.item._meta.verbose_name
+
+    return render(request, 'list_app/show_order.html',
+                  {'form': form, 'order': order, 'executor_verbose_name': executor_verbose_name,
+                   'item_verbose_name': item_verbose_name})

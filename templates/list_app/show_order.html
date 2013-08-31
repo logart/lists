@@ -2,22 +2,22 @@
     {% csrf_token %}
     {{ form.non_field_errors }}
     <div class="fieldWrapper">
-        <label for="id_subject">Email subject:</label>
+        {{ item_verbose_name }}:
         {{ order.item.name }}
     </div>
     <div class="fieldWrapper">
         {{ form.quantity.errors }}
-        <label for="id_message">Your message:</label>
+        {{ form.done.label_tag }}:
         {{ form.quantity }}
     </div>
     <div class="fieldWrapper">
-        <label for="id_sender">Your email address:</label>
+        {{ executor_verbose_name }}:
         {{ order.executor }}
     </div>
     <div class="fieldWrapper">
         {{ form.done.errors }}
-        <label for="id_cc_myself">CC yourself?</label>
+        {{ form.done.label_tag }}:
         {{ form.done }}
     </div>
-    <p><input type="submit" value="Подтвердить заказ"/></p>
+    <p><input type="submit" value="Обновить заказ"/></p>
 </form>
